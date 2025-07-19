@@ -36,7 +36,6 @@ This project uses Nix for system dependencies and `uv` for Python package manage
    ```
 
 2. **Load the Nix environment**:
-
    - If using direnv: `direnv allow` (environment loads automatically)
    - Otherwise: `nix-shell ~/repos/bash-utils/nix/combined.nix`
 
@@ -60,9 +59,9 @@ The repository is organized by book chapters:
 
 ```
 hugging_face_ia/
-├── ch01/          # Chapter 1 examples
-├── ch02/          # Chapter 2 examples
-├── ch03/          # Chapter 3 examples
+├── chapter_01/          # Chapter 1 examples
+├── chapter_02/          # Chapter 2 examples
+├── chapter_03/          # Chapter 3 examples
 ├── ...
 ├── pyproject.toml # Project configuration
 ├── uv.lock        # Locked dependencies
@@ -71,7 +70,7 @@ hugging_face_ia/
 
 ## Key Dependencies
 
-### Core Libraries
+gg### Core Libraries
 
 - **`transformers>=4.52.4`**: The heart of this book! Hugging Face's transformers library provides state-of-the-art pre-trained models for NLP, computer vision, and audio tasks. This library is what makes working with models like BERT, GPT, and others accessible.
 
@@ -103,10 +102,10 @@ For standalone Python files, you can run them directly with `uv`:
 
 ```bash
 # Run a specific Python file
-uv run python ch01/example.py
+uv run python chapter_01/example.py
 
 # Or if your virtual environment is activated
-python ch01/example.py
+python chapter_01/example.py
 ```
 
 ## License
