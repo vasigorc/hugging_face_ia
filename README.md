@@ -21,10 +21,9 @@ While the book recommends using Anaconda, this project uses **`uv`** instead for
 
 This project uses Nix for system dependencies and `uv` for Python package management.
 
-### Prerequisites
+### Prerequisite
 
-1. **Nix**: Install from [nixos.org](https://nixos.org/download.html). Generally speaking, this is optional, but this document doesn't expand on the alternative (for example manual) set-up of all of the prerequisites.
-2. **direnv** (optional but recommended): For automatic environment loading
+**Nix**: Install from [nixos.org](https://nixos.org/download.html). Generally speaking, this is optional, but this document doesn't expand on the alternative (for example manual) set-up of all of the prerequisites.
 
 ### Getting Started
 
@@ -36,8 +35,7 @@ This project uses Nix for system dependencies and `uv` for Python package manage
    ```
 
 2. **Load the Nix environment**:
-   - If using direnv: `direnv allow` (environment loads automatically)
-   - Otherwise: `nix-shell ~/repos/bash-utils/nix/combined.nix`
+   `nix-shell ~/repos/bash-utils/nix/combined.nix`
 
    > **Note**: The Nix configuration is sourced from [bash-utils/nix](https://github.com/vasigorc/bash-utils/tree/main/nix) which provides Python, `uv`, and necessary C libraries.
 
