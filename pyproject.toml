@@ -5,6 +5,7 @@ explicit = true
 
 [project]
 dependencies = [
+  "huggingface-hub>=0.33.1",
   "jupyter>=1.1.1",
   "pandas>=2.3.0",
   "torch>=2.3.0",

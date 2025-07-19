@@ -366,6 +366,7 @@ name = "hugging-face-ia"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
+    { name = "huggingface-hub" },
     { name = "jupyter" },
     { name = "pandas" },
     { name = "torch" },
@@ -376,6 +377,7 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
+    { name = "huggingface-hub", specifier = ">=0.33.1" },
     { name = "jupyter", specifier = ">=1.1.1" },
     { name = "pandas", specifier = ">=2.3.0" },
     { name = "torch", specifier = ">=2.3.0" },

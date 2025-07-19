@@ -68,7 +68,7 @@ hugging_face_ia/
 
 ## Key Dependencies
 
-gg### Core Libraries
+### Core Libraries
 
 - **`transformers>=4.52.4`**: The heart of this book! Hugging Face's transformers library provides state-of-the-art pre-trained models for NLP, computer vision, and audio tasks. This library is what makes working with models like BERT, GPT, and others accessible.
 
@@ -77,6 +77,8 @@ gg### Core Libraries
 - **`jupyter>=1.1.1`**: Most examples in the book are presented as Jupyter notebooks, allowing for interactive exploration and experimentation with models and datasets.
 
 - **`pandas>=2.3.0`**: Essential for data manipulation and analysis, particularly when working with datasets and model outputs.
+
+- **`huggingface-hub>=0.33.1`**: Provides a way to interact with the Hugging Face Hub, allowing you to download models and datasets, as well as upload your own.
 
 ## Running Examples
 
