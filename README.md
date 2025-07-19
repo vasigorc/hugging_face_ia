@@ -102,7 +102,11 @@ For standalone Python files, you can run them directly with `uv`:
 
 ```bash
 # Run a specific Python file
-uv run python chapter_01/example.py
+uv run python chapter_02/main.py
+__CUDNN VERSION: 8902
+__Number CUDA Devices 1
+__CUDA Device Name NVIDIA GeForce RTX 4080 Laptop GPU
+__CUDA Device Total Memory [GB] 12.462456832
 
 # Or if your virtual environment is activated
 python chapter_01/example.py
