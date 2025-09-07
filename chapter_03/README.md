@@ -67,3 +67,27 @@ We are using token embeddings to visualize the relationship between tokens. Sinc
 We further use `matplotlib` to plot the tokens' graph:
 
 ![Tokens relationship graph](./token_embeddings.png)
+
+### Sentiment Analysis
+
+As in the previous example, in [this exercise](./sentiment_analysis.py) we kick off by tokenizing the input:
+
+```bash
+uv run python chapter_03/sentiment_analysis.py
+tokenizer_config.json: 100%|...| 48.0/48.0 [00:00<00:00, 406kB/s]
+config.json: 100%|...| 629/629 [00:00<00:00, 5.20MB/s]
+vocab.txt: 232kB [00:00, 8.20MB/s]
+model.safetensors: 100%|█...8M [00:03<00:00, 82.3MB/s]
+{'input_ids': tensor([[  101,  1045,  3866,  1996,  3185,  1010,  2009,  2001, 10392,   999,
+           102]]), 'attention_mask': tensor([[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]])}
+```
+
+What gets printed next is the model's output:
+
+```bash
+...
+SequenceClassifierOutput(loss=None, logits=tensor([[-4.3428,  4.6955]], grad_fn=<AddmmBackward0>), hidden_states=None, attentions=None)
+Predicted sentiment: positive
+```
+
+The `logit` key points to a value of shape (1, 2), where the first dimension corresponds to the batch size (number of texts), and the second dimension corresponds to the number of classes (2, 0 for "negative", and 1 for "positive"). Looking at the scores suggests that model correctly identified the text as highly likely to have positive tone. Hence, the predicted sentiment.
