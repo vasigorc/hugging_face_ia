@@ -91,3 +91,18 @@ Predicted sentiment: positive
 ```
 
 The `logit` key points to a value of shape (1, 2), where the first dimension corresponds to the batch size (number of texts), and the second dimension corresponds to the number of classes (2, 0 for "negative", and 1 for "positive"). Looking at the scores suggests that model correctly identified the text as highly likely to have positive tone. Hence, the predicted sentiment.
+
+### Using Transformers Pipelines
+
+The [first example](./transformers_pipelines.py) where pipelines are preferred to direct models' usage:
+
+```bash
+ uv run python chapter_03/transformers_pipelines.py
+ "Unknown task dummy, available tasks are ['audio-classification', 'automatic-speech-recognition', 'depth-estimation', 'document-question-answering', 'feature-extraction', 'fill-mask', 'image-classification', 'image-feature-extraction', 'image-segmentation', 'image-text-to-text', 'image-to-image', 'image-to-text', 'mask-generation', 'ner', 'object-detection', 'question-answering', 'sentiment-analysis', 'summarization', 'table-question-answering', 'text-classification', 'text-generation', 'text-to-audio', 'text-to-speech', 'text2text-generation', 'token-classification', 'translation', 'video-classification', 'visual-question-answering', 'vqa', 'zero-shot-audio-classification', 'zero-shot-classification', 'zero-shot-image-classification', 'zero-shot-object-detection', 'translation_XX_to_YY']"
+ Device set to use cuda
+ [{'label': 'POSITIVE', 'score': 0.9998437166213989}, {'label': 'NEGATIVE', 'score': 0.9997773766517639}]
+```
+
+### NLP Tasks
+
+#### Text Classification
