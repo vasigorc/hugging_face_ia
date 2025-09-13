@@ -150,3 +150,41 @@ Device set to use cuda
 Device set to use cuda
 [{'translation_text': 'Wikipedia is hosted by the Wikipedia Foundation, a non-profit organization and hosts many other projects.'}]
 ```
+
+#### Zero-Shot Classification
+
+In the text sentiment analysis example above the model was trained on a set of labelled examples (positive or negative).
+
+> While this is useful in analyzing the sentiment in a new paragraph or a text, it has its limitations. For example, suppose
+> you have a description of a new gadget and want to automatically classify it into categories such as Home Appliances, Electronics, etc.
+> Using the model that has been pre-trained on a fixed set of labels is not going to be useful in this case. This is where _Zero-shot classification_
+> comes in.
+
+> ...zero-shot classification is the task of classifying previously unseen classes during training of a model, one-shot classification refers
+> to the technique where a model is trained to recognize classes with only one example (or just a few examples) per class during training.
+
+In order to try zero-shot text classification we need `joeedav/xlm-roberta-large-xnli` model. This is a model from a private
+repository, so we must get a Hugging Face token (by registering with Hugging Face first) - a READ token suffices. Once the token
+is generated you can provide it during `huggingface-cli login` command execution:
+
+```bash
+huggingface-cli login
+
+    _|    _|  _|    _|    _|_|_|    _|_|_|  _|_|_|  _|      _|    _|_|_|      _|_|_|_|    _|_|      _|_|_|  _|_|_|_|
+    _|    _|  _|    _|  _|        _|          _|    _|_|    _|  _|            _|        _|    _|  _|        _|
+    _|_|_|_|  _|    _|  _|  _|_|  _|  _|_|    _|    _|  _|  _|  _|  _|_|      _|_|_|    _|_|_|_|  _|        _|_|_|
+    _|    _|  _|    _|  _|    _|  _|    _|    _|    _|    _|_|  _|    _|      _|        _|    _|  _|        _|
+    _|    _|    _|_|      _|_|_|    _|_|_|  _|_|_|  _|      _|    _|_|_|      _|        _|    _|    _|_|_|  _|_|_|_|
+
+    A token is already saved on your machine. Run `huggingface-cli whoami` to get more information or `huggingface-cli logout` if you want to log out.
+    Setting a new token will erase the existing one.
+    To log in, `huggingface_hub` requires a token generated from https://huggingface.co/settings/tokens .
+Enter your token (input will not be visible):
+Add token as git credential? (Y/n) Y
+Token is valid (permission: read).
+The token `bonobo15` has been saved to /home/vasilegorcinschi/.cache-nix/huggingface/stored_tokens
+Your token has been saved in your configured git credential helpers (store).
+Your token has been saved to /home/vasilegorcinschi/.cache-nix/huggingface/token
+Login successful.
+The current active token is: `bonobo15`
+```
