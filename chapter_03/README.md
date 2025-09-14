@@ -188,3 +188,5 @@ Your token has been saved to /home/vasilegorcinschi/.cache-nix/huggingface/token
 Login successful.
 The current active token is: `bonobo15`
 ```
+
+In [this example](./zero-shot_classification.py) we will classifying texts to one of three categories. `joeedav/xlm-roberta-large-xnli` is fine-tuned on the **XLM-RoBERTa** model that was pre-trained on 2.5T of filtered Common Crawl data containing 100 languages.
