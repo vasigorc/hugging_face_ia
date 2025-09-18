@@ -1,6 +1,6 @@
 # Hugging Face in Action
 
-This repository contains code examples and exercises from the book ["Hugging Face in Action"](https://www.manning.com/books/hugging-face-in-action) by Manning Publications.
+This repository contains _selected_ code examples and exercises from the book ["Hugging Face in Action"](https://www.manning.com/books/hugging-face-in-action) by Manning Publications.
 
 ![Hugging Face in Action(MEAP)](./images/hugging_face_ia.png)
 

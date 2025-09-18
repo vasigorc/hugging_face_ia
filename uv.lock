@@ -1,5 +1,5 @@
 version = 1
-revision = 2
+revision = 3
 requires-python = ">=3.11"
 resolution-markers = [
     "python_full_version < '3.12'",
@@ -510,7 +510,7 @@ dependencies = [
     { name = "jupyter" },
     { name = "matplotlib" },
     { name = "pandas" },
-    { name = "protobuf", marker = "python_full_version >= '3.12'" },
+    { name = "protobuf" },
     { name = "scikit-learn" },
     { name = "sentencepiece" },
     { name = "torch" },
@@ -525,7 +525,7 @@ requires-dist = [
     { name = "jupyter", specifier = ">=1.1.1" },
     { name = "matplotlib", marker = "python_full_version >= '3.11'", specifier = ">=3.10.6" },
     { name = "pandas", specifier = ">=2.3.0" },
-    { name = "protobuf", marker = "python_full_version >= '3.12'", specifier = ">=6.32.1" },
+    { name = "protobuf", marker = "python_full_version >= '3.11'", specifier = ">=6.32.1" },
     { name = "scikit-learn", marker = "python_full_version >= '3.11'", specifier = ">=1.7.1" },
     { name = "sentencepiece", marker = "python_full_version >= '3.11'", specifier = ">=0.2.1" },
     { name = "torch", specifier = ">=2.6.0" },

@@ -189,4 +189,28 @@ Login successful.
 The current active token is: `bonobo15`
 ```
 
-In [this example](./zero-shot_classification.py) we will classifying texts to one of three categories. `joeedav/xlm-roberta-large-xnli` is fine-tuned on the **XLM-RoBERTa** model that was pre-trained on 2.5T of filtered Common Crawl data containing 100 languages.
+In [this example](./zero-shot_classification.py) we will be classifying texts to one of three categories. `joeedav/xlm-roberta-large-xnli` is fine-tuned on the **XLM-RoBERTa** model that was pre-trained on 2.5T of filtered Common Crawl data containing 100 languages.
+
+```bash
+uv run python chapter_03/zero-shot_classification.py
+...
+==================================================
+Zero-Shot Classification for Text 1
+==================================================
+Predictions:
+       labels    scores
+0    politics  0.989286
+1  technology  0.771744
+2     romance  0.510892
+3    business  0.289194
+==================================================
+
+==================================================
+Zero-Shot Classification for Both Texts
+==================================================
+Predictions:
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             sequence                                     labels                                                                                scores
+0  \n    "In the intricate realm of global affairs, the interplay of power, \n    diplomacy, and governance stands as a defining force in the \n    trajectory of nations. Amidst fervent debates in legislative \n    chambers and pivotal dialogues among world leaders, ideologies \n    clash and policies take shape, shaping the course of societies. \n    Issues such as economic disparity, environmental stewardship, and \n    human rights take precedence, driving conversations and shaping \n    public sentiment. In an age of digital interconnectedness, social \n    media platforms have emerged as influential channels for discourse \n    and activism, amplifying voices and reshaping narratives with \n    remarkable speed and breadth. As citizens grapple with the \n    complexities of contemporary governance, the pursuit of accountable \n    and transparent leadership remains paramount, reflecting an \n    enduring quest for fairness and inclusivity in societal governance.  [politics, technology, romance, business]       [0.9892858266830444, 0.7717442512512207, 0.510892391204834, 0.2891943156719208]
+1                                                                                                                                                    \n    In the tender tapestry of human connection, romance weaves its \ndelicate threads, binding hearts in a dance of passion and longing. \n    From the flutter of a first glance to the warmth of an intimate \nembrace, love blooms in the most unexpected places, transcending \nbarriers of time and circumstance. In the gentle caress of a hand \nand the whispered promises of affection, two souls find solace in \n    each other's embrace, navigating the complexities of intimacy with \n    tender care. As the sun sets and stars illuminate the night sky, \n    lovers share stolen moments of intimacy, lost in the intoxicating \n    rhythm of each other's presence. In the symphony of love, every \nglance, every touch, speaks volumes of a shared bond that defies \nexplanation, leaving hearts entwined in an eternal embrace.\n      [romance, business, politics, technology]  [0.9982308149337769, 0.11880021542310715, 0.01600519008934498, 0.014276129193603992]
+==================================================
+```
