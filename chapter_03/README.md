@@ -214,3 +214,46 @@ Predictions:
 1                                                                                                                                                    \n    In the tender tapestry of human connection, romance weaves its \ndelicate threads, binding hearts in a dance of passion and longing. \n    From the flutter of a first glance to the warmth of an intimate \nembrace, love blooms in the most unexpected places, transcending \nbarriers of time and circumstance. In the gentle caress of a hand \nand the whispered promises of affection, two souls find solace in \n    each other's embrace, navigating the complexities of intimacy with \n    tender care. As the sun sets and stars illuminate the night sky, \n    lovers share stolen moments of intimacy, lost in the intoxicating \n    rhythm of each other's presence. In the symphony of love, every \nglance, every touch, speaks volumes of a shared bond that defies \nexplanation, leaving hearts entwined in an eternal embrace.\n      [romance, business, politics, technology]  [0.9982308149337769, 0.11880021542310715, 0.01600519008934498, 0.014276129193603992]
 ==================================================
 ```
+
+#### Question Answering Tasks
+
+For the QA (question answering) task we'll be using `deepset/roberta-base-squad2` model. This model is pretrained on English language using a masked language modelling (MLM)
+objective, fine-tuned using the SQuAD 2.0 dataset.
+
+> The Standard Question Answering Dataset (SQuAD) is a reading comprehension dataset, consisting of questions posed by crowd workers on a set of Wikipedia articles,
+> where the answer to every question is a segment of text, or span, from the corresponding reading passage, or the question might be unanswerable.
+
+```bash
+uv run python chapter_03/qa.py
+...
+==================================================
+Original text:
+
+    The English name of "Singapore" is an anglicisation of the native
+Malay name for the country, Singapura (pronounced [siŋapura]),
+    which was in turn derived from the Sanskrit word for 'lion city'
+(Sanskrit: सिंहपुर; romanised: Siṃhapura; Brahmi: 𑀲𑀺𑀁𑀳𑀧𑀼𑀭; literally
+    "lion city"; siṃha means 'lion', pura means 'city' or 'fortress' ).
+    Pulau Ujong was one of the earliest references to Singapore Island,
+    which corresponds to a Chinese account from the third century
+                                            referred to a place as Pú Luó Zhōng (Chinese: 蒲 羅 中), a
+                                                                                    transcription of the Malay name for 'island at the end of a
+peninsula'. Early references to the name Temasek (or Tumasik) are
+found in the Nagarakretagama, a Javanese eulogy written in 1365,
+and a Vietnamese source from the same time period. The name possibly
+    means Sea Town, being derived from the Malay tasek, meaning 'sea' or
+'lake'. The Chinese traveller Wang Dayuan visited a place around 1330
+        named Danmaxi (Chinese: 淡馬錫; pinyin: Dànmǎxí; Wade–Giles: Tan Ma Hsi)
+    or Tam ma siak, depending on pronunciation; this may be a transcription
+    of Temasek, alternatively, it may be a combination of the Malay Tanah
+    meaning 'land' and Chinese xi meaning 'tin', which was traded on the
+island
+
+--------------------------------------------------
+Question: What is the meaning of Singapura?
+--------------------------------------------------
+Model response:
+      score  start  end     answer
+0  0.092787    194  203  lion city
+==================================================
+```
