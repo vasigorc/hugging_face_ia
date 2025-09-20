@@ -92,9 +92,45 @@ jupyter notebook
 
 # Or use JupyterLab for a more modern interface
 jupyter lab
+[I 2025-09-20 15:20:21.121 ServerApp] jupyterlab | extension was successfully linked.
+...
+[I 2025-09-20 15:20:21.144 ServerApp] Serving notebooks from local directory: /home/vasile/repos/hugging_face_ia
+[I 2025-09-20 15:20:21.144 ServerApp] Jupyter Server 2.15.0 is running at:
+[I 2025-09-20 15:20:21.144 ServerApp] http://localhost:8888/lab?token=302f507fddffa1c5eb1b04692acc1ae471b8ec8483d85328
+[I 2025-09-20 15:20:21.144 ServerApp]     http://127.0.0.1:8888/lab?token=302f507fddffa1c5eb1b04692acc1ae471b8ec8483d85328
+[I 2025-09-20 15:20:21.144 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2025-09-20 15:20:21.242 ServerApp]
+
+    To access the server, open this file in a browser:
+        file:///home/vasile/.local-nix/share/jupyter/runtime/jpserver-121592-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8888/lab?token=302f507fddffa1c5eb1b04692acc1ae471b8ec8483d85328
+        http://127.0.0.1:8888/lab?token=302f507fddffa1c5eb1b04692acc1ae471b8ec8483d85328
 ```
 
-Then navigate to `http://localhost:8888` in your browser and open the relevant chapter notebook.
+Then navigate to the suggested address in your browser and open the relevant chapter notebook.
+
+⚠️If you are seeing a warning similar to this when starting the lab:
+
+```bash
+[W 2025-09-20 19:38:17.256 ServerApp] 404 GET /api/kernels/566b13a2-9f98-4b94-8035-470ba3579650?1758411497255 (127.0.0.1): Kernel does not exist: 566b13a2-9f98-4b94-8035-470ba3579650
+```
+
+Consider providing the allow hidden configuration to Jupyter like so:
+
+```bash
+# Generate config file if it doesn't exist
+# Should create the following file: ~/.jupyter/jupyter_lab_config.py
+jupyter lab --generate-config
+```
+
+Then add the following line to the created file:
+
+```python
+c.FileContentsManager.allow_hidden = True
+```
+
+Finally, restart the lab.
 
 ### Python Scripts
 
