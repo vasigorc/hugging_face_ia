@@ -80,6 +80,8 @@ hugging_face_ia/
 
 - **`huggingface-hub>=0.33.1`**: Provides a way to interact with the Hugging Face Hub, allowing you to download models and datasets, as well as upload your own.
 
+- **`gradio>=5.46.1`**: is an open-source library that simplifies the process of creating user interfaces for machine learning models and other applications. It is designed to make it easy for developers to build interactive web interfaces for their machine learning models without requiring extensive knowledge of web development.
+
 ## Running Examples
 
 ### Jupyter Notebooks
