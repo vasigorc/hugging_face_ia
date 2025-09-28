@@ -77,3 +77,31 @@ curl -XGET "https://datasets-server.huggingface.co/parquet?dataset=stanfordnlp/i
   "partial": false
 }
 ```
+
+The output contains the URLs of the Paquet file for each of the splits. In [this example](reading_parquet_file.py) we are
+using these URLs in Python to access the Parquet file of the split(s) directly:
+
+```bash
+uv run python chapter_05/reading_parquet_file.py
+Reading Parquet file from URL...
+https://huggingface.co/datasets/stanfordnlp/imdb/resolve/refs%2Fconvert%2Fparquet/plain_text/unsupervised/0000.parquet
+
+Successfully loaded DataFrame. Here are the first 5 rows:
+                                                text  label
+0  This is just a precious little diamond. The pl...     -1
+1  When I say this is my favourite film of all ti...     -1
+2  I saw this movie because I am a huge fan of th...     -1
+3  Being that the only foreign films I usually li...     -1
+4  After seeing Point of No Return (a great movie...     -1
+
+Here is some information about the DataFrame:
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 50000 entries, 0 to 49999
+Data columns (total 2 columns):
+ #   Column  Non-Null Count  Dtype
+---  ------  --------------  -----
+ 0   text    50000 non-null  object
+ 1   label   50000 non-null  int64
+dtypes: int64(1), object(1)
+memory usage: 781.4+ KB
+```
