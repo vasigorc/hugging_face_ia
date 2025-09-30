@@ -105,3 +105,41 @@ Data columns (total 2 columns):
 dtypes: int64(1), object(1)
 memory usage: 781.4+ KB
 ```
+
+## Tokenization in NLP
+
+### Types of Tokenization Methods
+
+- **Word-level tokenization** - splits text into individual words
+  - Examples: `Word2Vec`, and `GloVe`
+- **Subword-level tokenization** - smaller meaningful units or subwords
+- **Character-level tokenization** - commonly used for languages like Chinese or Japanese, where word boundaries are less obvious
+
+Most newer models, especially transformer-based models like **BERT** and **GPT**, prefer subword or byte-pair encoding (BPE) tokenization
+to overcome issues of out-of-vocabulary words, large vocabulary for diverse languages, not capturing internal structure of words.
+They provide better flexibility and generalization across languages and word forms.
+
+Subword-level tokenization handles out-of-vocabulary (OOV) words by breaking them into smaller, recognizable sub-units.
+
+> **Token ID**
+> A token ID is a unique numerical identifier assigned to a token (a word, subword, punctuation mark, or even whitespace, depending
+> on the tokenizer used) in the context of NLP. Token IDs are generated during the tokenization process when text data is processed
+> into input that a large language model (e.g. BERT, GPT) can understand and use.
+
+In the [tokenization_in_nlp.py](tokenization_in_nlp.py) example we are using the same
+IDMB dataset with BERT tokenizer to tokenize a review, get its token ids, and then
+convert the ids back to tokens and back to the original text:
+
+```bash
+uv run python chapter_05/tokenization_i
+n_nlp.py
+Loading IMDB dataset...
+Skipping the first two reviews...
+Loading BERT tokenizer...
+Tokenizing reviews...
+
+--- First example after skipping ---
+Raw review text: If only to avoid making this type of film in the future. This film is interesting as an experiment but tells no cogent story.<br /><br />One might feel virtuous for sitting thru it because it touches on so many IMPORTANT issues but it does so without any discernable motive. The viewer comes away with no new perspectives (unless one comes up with one while one's mind wanders, as it will invariably do during this pointless film).<br /><br />One might better spend one's time staring out a window at a tree growing.<br /><br />
+Sentiment label: 0
+...
+```

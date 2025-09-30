@@ -9,7 +9,7 @@ dataset_id = "stanfordnlp/imdb"
 # only get training split
 # instead of returning the entire dataset, return
 # an IterableDatasetDict
-# shuffling the downloaded set with a fixed seed for reproductibility
+# shuffling the downloaded set  with a fixed seed for reproductibility
 dataset = load_dataset(dataset_id, streaming=True, split="train").shuffle(seed=42)
 print(dataset)
 
