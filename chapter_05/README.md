@@ -143,3 +143,9 @@ Raw review text: If only to avoid making this type of film in the future. This f
 Sentiment label: 0
 ...
 ```
+
+### Visualization datasets
+
+> The Hugging Face datasets provide a great opportunity to practice data visualization
+> techniques, which allows you to glean additional insights from your data and generate
+> conclusions that can inform decision-making or model optimization.
