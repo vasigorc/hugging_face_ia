@@ -149,3 +149,5 @@ Sentiment label: 0
 > The Hugging Face datasets provide a great opportunity to practice data visualization
 > techniques, which allows you to glean additional insights from your data and generate
 > conclusions that can inform decision-making or model optimization.
+
+[Twitter's Financial Data Visualization example](financial_news_distribution_visualization.ipynb) is available as a Jupyter Notebook.
