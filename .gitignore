@@ -11,3 +11,7 @@ wheels/
 
 # Jupyter checkpoints
 .ipynb_checkpoints
+
+# saved training results
+results/
+.results/
