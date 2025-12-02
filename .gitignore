@@ -15,3 +15,6 @@ wheels/
 # saved training results
 results/
 .results/
+
+# tmux verbose logs
+tmux-*.log
