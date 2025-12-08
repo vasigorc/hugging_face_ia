@@ -93,3 +93,5 @@ While Elon Musk's primary focus has been on the practical applications of AI rat
 Ask a question (type 'exit' to stop): exit
 AI: Sure, feel free to ask if you have any more questions or need further assistance!
 ```
+
+## Connecting LLMs to your private data using LlamaIndex
