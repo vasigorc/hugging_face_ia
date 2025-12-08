@@ -93,3 +93,63 @@ While Elon Musk's primary focus has been on the practical applications of AI rat
 Ask a question (type 'exit' to stop): exit
 AI: Sure, feel free to ask if you have any more questions or need further assistance!
 ```
+
+## Connecting LLMs to your private data using LlamaIndex
+
+LlamaIndex enables Retrieval-Augmented Generation (RAG), allowing LLMs to answer questions based on your private documents. The example demonstrates building a chatbot that can answer questions about a specific AsciiDoc file using a locally running Ollama model.
+
+### Document-based Chatbot with Gradio Interface
+
+The `chatbot_on_adoc_file.py` example showcases:
+
+- **Document Loading**: Uses `DoclingReader` to parse AsciiDoc files
+- **Vector Indexing**: Creates a searchable index using HuggingFace embeddings (`BAAI/bge-small-en-v1.5`)
+- **Index Persistence**: Saves indices locally to avoid re-processing on subsequent runs
+- **Local LLM Integration**: Connects to Ollama for querying (default: `qwen2.5:7b`)
+- **Web UI**: Provides a Gradio chatbot interface for interactive Q&A
+
+#### Key Features
+
+1. **Automatic Index Caching**: The script generates a hash-based directory name to cache the vector index, speeding up subsequent runs.
+
+2. **Configurable Temperature**: Control response randomness with the `-t/--temperature` flag (0 = most factual, 2 = most creative).
+
+3. **Force Reindexing**: Use `--force-reload` to regenerate the index if the source document has changed.
+
+#### Usage
+
+```bash
+uv run python chapter_07/chatbot_on_adoc_file.py -f ~/path/to/document.adoc
+```
+
+Optional arguments:
+- `-t/--temperature`: Set LLM temperature (default: 0.1)
+- `--force-reload`: Force re-indexing even if index exists
+
+#### Sample Run
+
+```bash
+uv run python chapter_07/chatbot_on_adoc_file.py -f ~/repos/mpda/new_testament/06_social_service_of_the_savior_part_3.adoc
+2025-12-14 13:11:55,646 - INFO - Load pretrained SentenceTransformer: BAAI/bge-small-en-v1.5
+2025-12-14 13:11:56,941 - INFO - 1 prompt is loaded, with the key: query
+Loading existing index from /home/vasile/repos/hugging_face_ia/chapter_07/.index_06_social_service_of_the_savior_part_3_8b1ceed1
+Loading llama_index.core.storage.kvstore.simple_kvstore from /home/vasile/repos/hugging_face_ia/chapter_07/.index_06_social_service_of_the_savior_part_3_8b1ceed1/docstore.json.
+Loading llama_index.core.storage.kvstore.simple_kvstore from /home/vasile/repos/hugging_face_ia/chapter_07/.index_06_social_service_of_the_savior_part_3_8b1ceed1/index_store.json.
+2025-12-14 13:11:57,187 - INFO - Loading all indices.
+2025-12-14 13:11:57,284 - INFO - HTTP Request: POST http://localhost:11434/api/show "HTTP/1.1 200 OK"
+/home/vasile/repos/hugging_face_ia/chapter_07/chatbot_on_adoc_file.py:79: UserWarning: You have not specified a value for the `type` parameter. Defaulting to the 'tuples' format for chatbot messages, but this is deprecated and will be removed in a future version of Gradio. Please set type='messages' instead, which uses openai-style dictionaries with 'role' and 'content' keys.
+  chatbot = gr.Chatbot()
+* Running on local URL:  http://127.0.0.1:7860
+```
+
+The first run will create the vector index (takes a few seconds). Subsequent runs load the cached index instantly.
+
+#### Example Interactions
+
+The chatbot can answer questions based on the document content:
+
+![Question example showing the chatbot interface](images/question_6.png)
+
+![Another question example with detailed response](images/question_9.png)
+
+The examples demonstrate the chatbot's ability to understand context from the indexed document and provide accurate, detailed responses to user queries.

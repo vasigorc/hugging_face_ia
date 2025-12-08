@@ -12,6 +12,9 @@ wheels/
 # Jupyter checkpoints
 .ipynb_checkpoints
 
+# LlamaIndex cached indices
+.index_*/
+
 # saved training results
 results/
 .results/
